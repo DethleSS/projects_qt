@@ -3,7 +3,10 @@
 #include <initializer_list>
 #include <iostream>
 #include <algorithm>
-
+#include <vector>
+#include <numeric>
+#include <string>
+#include <functional>
 namespace stu
 {
  template <class T>
