@@ -39,11 +39,17 @@ namespace stu
 
         }
 
+        pointer get()
+        {
+            return m_ptr;
+        }
+        
         auto_ptr& operator=(auto_ptr& that)
         {
             reset(that.realese());
             return *this;
         }
+        
         element_type& operator*()
         {
             return *m_ptr;
