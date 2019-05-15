@@ -2,18 +2,6 @@
 #include <iostream>
 #include <list>
 #include <vector>
-void Depth_First_Search(int n, int **Graph,
-                                         bool *Visited, int Node){
-    Visited[Node] = true;
-    std::cout << Node + 1 << std::endl;
-    for (int i = 0 ; i < n ; i++)
-         if (Graph[Node][i] && !Visited[i])
-                  Depth_First_Search(n,Graph,Visited,i);
-}
-
-
-
-
 class Graph
 {
     int V;
@@ -59,7 +47,7 @@ void Graph::DFS(int v)
 
 void Graph::BFS(int s)
 {
-    bool *visited = new bool[V];
+    bool* visited = new bool[V];
     for(int i = 0; i < V; i++)
         visited[i] = false;
 
@@ -92,32 +80,25 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     Graph g(7);
-    g.addEdge(0,4);
+    g.addEdge(0,1);
     g.addEdge(0,5);
-    g.addEdge(1,5);
-    g.addEdge(1,6);
+    g.addEdge(0,6);
+    g.addEdge(1,0);
+    g.addEdge(1,3);
+    g.addEdge(1,4);
     g.addEdge(2,3);
-    g.addEdge(2,4);
     g.addEdge(2,5);
+    g.addEdge(3,1);
     g.addEdge(3,2);
-    g.addEdge(3,6);
-    g.addEdge(4,0);
-    g.addEdge(4,2);
+    g.addEdge(4,1);
+    g.addEdge(4,6);
     g.addEdge(5,0);
-    g.addEdge(5,1);
     g.addEdge(5,2);
-    g.addEdge(6,1);
-    g.addEdge(6,3);
-
-
-
-
-
-
-
-    g.DFS(5);
+    g.addEdge(6,0);
+    g.addEdge(6,4);
+    g.BFS(0);
     std::cout << std::endl;
-    g.BFS(5);
+
 
 
 
